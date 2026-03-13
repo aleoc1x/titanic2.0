@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- <head> contiene información del documento que no se muestra al usuario -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- <title> define el título que aparece en la pestaña del navegador -->
+  <title>Formulario de Contacto | Proyecto ML Titanic</title>
+  <!-- Vincula el archivo de estilos CSS a este documento HTML -->
+  <link rel="stylesheet" href="estilos.css" />
+</head>
+<body>
+
+  <!-- <header> representa la cabecera del sitio web -->
+  <header>
+    <h1>Página Informativa: Machine Learning - Caso Titanic</h1>
+    <p>Ingeniería en Sistemas Computacionales | ITSX | 2026</p>
+  </header>
+
+  <!-- <nav> agrupa los enlaces de navegación del sitio -->
+  <nav>
+    <a href="index.html">Inicio</a> |
+    <a href="ml.html">ML</a> |
+    <a href="problema.html">Problema</a> |
+    <a href="dataset.html">Dataset</a> |
+    <a href="metodologia.html">Metodología</a> |
+    <a href="resultados.html">Resultados</a> |
+    <a href="conclusiones.html">Conclusiones</a> |
+    <a href="formulario.html">Contacto</a>
+  </nav>
+
+  <hr />
+
+  <!-- <main> contiene el contenido principal de la página -->
+  <main>
+
+    <h2>Formulario de Contacto</h2>
+    <p>Completa el formulario si tienes alguna pregunta sobre el proyecto.</p>
+
+    <!--
+      <form> es el elemento principal del formulario.
+      action: indica a dónde se enviarán los datos al hacer submit.
+      method: define cómo se envían los datos. POST los envía de forma segura.
+    -->
+    <form action="#" method="POST">
+
+      <!-- Campo tipo text: acepta texto libre de una sola línea -->
+      <label for="nombre">Nombre:</label><br />
+      <!--
+        <input> es el campo de entrada de datos.
+        type="text": campo de texto simple.
+        required: el campo es obligatorio antes de enviar el formulario.
+        placeholder: muestra un texto de guía dentro del campo.
+      -->
+      <input
+        type="text"
+        id="nombre"
+        name="nombre"
+        placeholder="Escribe tu nombre"
+        required
+      />
+      <br /><br />
+
+      <!-- Campo tipo text para el apellido -->
+      <label for="apellido">Apellido:</label><br />
+      <input
+        type="text"
+        id="apellido"
+        name="apellido"
+        placeholder="Escribe tu apellido"
+        required
+      />
+      <br /><br />
+
+      <!-- Campo tipo email: valida automáticamente el formato de correo -->
+      <label for="email">Correo electrónico:</label><br />
+      <!--
+        type="email": el navegador verifica que el texto tenga formato de correo
+        con arroba y dominio antes de permitir el envío.
+      -->
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="correo@ejemplo.com"
+        required
+      />
+      <br /><br />
+
+      <!-- Campo tipo tel: optimizado para números telefónicos -->
+      <label for="telefono">Teléfono:</label><br />
+      <!--
+        type="tel": en dispositivos móviles muestra el teclado numérico.
+        pattern: expresión regular que valida 10 dígitos exactos.
+      -->
+      <input
+        type="tel"
+        id="telefono"
+        name="telefono"
+        placeholder="2281234567"
+        pattern="[0-9]{10}"
+      />
+      <br /><br />
+
+      <!-- Campo tipo number: solo acepta valores numéricos -->
+      <label for="semestre">Semestre:</label><br />
+      <!--
+        type="number": limita la entrada a números.
+        min y max definen el rango permitido.
+      -->
+      <input
+        type="number"
+        id="semestre"
+        name="semestre"
+        placeholder="Ej. 7"
+        min="1"
+        max="9"
+      />
+      <br /><br />
+
+      <!-- Campo tipo date: muestra un selector de calendario -->
+      <label for="fecha">Fecha de consulta:</label><br />
+      <!--
+        type="date": proporciona un selector visual de fecha en el navegador.
+      -->
+      <input
+        type="date"
+        id="fecha"
+        name="fecha"
+        required
+      />
+      <br /><br />
+
+      <!-- Campo tipo password: oculta el texto ingresado -->
+      <label for="clave">Clave de acceso:</label><br />
+      <!--
+        type="password": muestra asteriscos en lugar del texto escrito,
+        útil para campos donde se ingresa información confidencial.
+      -->
+      <input
+        type="password"
+        id="clave"
+        name="clave"
+        placeholder="Crea una clave"
+      />
+      <br /><br />
+
+      <!--
+        <select> crea una lista desplegable con opciones predefinidas.
+        El usuario solo puede elegir una de las opciones disponibles.
+      -->
+      <label for="tema">Tema de interés:</label><br />
+      <select id="tema" name="tema" required>
+        <!-- La primera opción actúa como texto de guía -->
+        <option value="" disabled selected>Selecciona un tema...</option>
+        <option value="ml">Machine Learning general</option>
+        <option value="titanic">Modelo Titanic</option>
+        <option value="html">Desarrollo web con HTML</option>
+        <option value="python">Python y Scikit-learn</option>
+        <option value="otro">Otro</option>
+      </select>
+      <br /><br />
+
+      <!-- Checkboxes: permiten seleccionar múltiples opciones -->
+      <label>¿Cómo me encontraste?</label><br />
+      <!--
+        type="checkbox": casillas de verificación independientes.
+        Cada una tiene su propio name y value.
+      -->
+      <input type="checkbox" id="redes" name="fuente" value="redes" />
+      <label for="redes">Redes sociales</label><br />
+
+      <input type="checkbox" id="clase" name="fuente" value="clase" />
+      <label for="clase">Compañero de clase</label><br />
+
+      <input type="checkbox" id="busqueda" name="fuente" value="busqueda" />
+      <label for="busqueda">Búsqueda en internet</label><br />
+      <br />
+
+      <!--
+        <textarea> permite al usuario escribir texto de múltiples líneas.
+        rows: define la altura inicial del campo en líneas.
+        maxlength: límite máximo de caracteres permitidos.
+      -->
+      <label for="mensaje">Mensaje:</label><br />
+      <textarea
+        id="mensaje"
+        name="mensaje"
+        rows="6"
+        cols="50"
+        placeholder="Escribe tu pregunta o comentario..."
+        maxlength="1000"
+        required
+      ></textarea>
+      <br /><br />
+
+      <!--
+        <button type="submit"> envía el formulario al hacer clic.
+        Es el elemento que activa el proceso de envío de datos.
+      -->
+      <button type="submit">Enviar mensaje</button>
+
+      <!-- Botón de tipo reset: limpia todos los campos del formulario -->
+      <button type="reset">Limpiar formulario</button>
+
+    </form>
+
+  </main>
+
+  <hr />
+
+  <!-- <footer> representa el pie de página del sitio -->
+  <footer>
+    <p>Olivares Contreras Alejandro | ISC | ITSX | Programación Web 2026</p>
+  </footer>
+
+</body>
+</html>

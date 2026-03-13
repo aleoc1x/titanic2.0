@@ -1,0 +1,346 @@
+/* ============================================================
+   estilos.css — Proyecto ML Titanic
+   Olivares Contreras Alejandro | ISC ITSX | 2026
+   ============================================================ */
+
+/* ── 1. SELECTOR UNIVERSAL ──────────────────────────────────
+   El asterisco (*) selecciona TODOS los elementos de la página.
+   Se usa para aplicar un reset general de márgenes y rellenos.
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ── 2. SELECTOR DE ELEMENTO (etiqueta) ─────────────────────
+   Selecciona directamente una etiqueta HTML.
+*/
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  background-color: #f5f5f5;
+  color: #222222;
+  line-height: 1.6;
+}
+
+header {
+  background-color: #1a1a2e;
+  color: #ffffff;
+  padding: 30px 40px;
+  text-align: center;
+}
+
+nav {
+  background-color: #16213e;
+  padding: 12px 40px;
+  text-align: center;
+}
+
+main {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+section {
+  background-color: #ffffff;
+  padding: 30px;
+  margin-bottom: 25px;
+  border-radius: 6px;
+}
+
+footer {
+  background-color: #1a1a2e;
+  color: #aaaaaa;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+h1 { font-size: 2rem; margin-bottom: 10px; }
+h2 { font-size: 1.4rem; color: #1a1a2e; margin-bottom: 15px; border-bottom: 2px solid #e0b84a; padding-bottom: 6px; }
+h3 { font-size: 1.1rem; color: #333333; margin-bottom: 10px; }
+p  { margin-bottom: 12px; text-align: justify; }
+a  { color: #e0b84a; text-decoration: none; }
+
+table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+th { background-color: #1a1a2e; color: #ffffff; padding: 10px; text-align: left; }
+td { padding: 10px; border-bottom: 1px solid #dddddd; }
+
+ul { padding-left: 20px; margin-bottom: 12px; }
+li { margin-bottom: 6px; }
+img { max-width: 100%; height: auto; display: block; margin: 15px auto; }
+
+form     { display: flex; flex-direction: column; gap: 15px; }
+label    { font-weight: bold; color: #333333; margin-bottom: 4px; display: block; }
+textarea { resize: vertical; min-height: 120px; }
+button   { padding: 12px 25px; background-color: #e0b84a; color: #1a1a2e; border: none; border-radius: 4px; font-size: 1rem; font-weight: bold; cursor: pointer; }
+
+/* ── 3. SELECTOR DE CLASE (.nombre-clase) ───────────────────
+   Selecciona elementos que tengan el atributo class indicado.
+*/
+.titulo-seccion  { color: #1a1a2e; font-size: 1.6rem; margin-bottom: 20px; }
+.subtitulo       { color: #e0b84a; font-size: 1.1rem; font-style: italic; }
+.destacado       { background-color: #fff8e1; border-left: 4px solid #e0b84a; padding: 12px 16px; margin: 15px 0; }
+.tarjeta         { background-color: #f9f9f9; border: 1px solid #dddddd; border-radius: 6px; padding: 20px; margin-bottom: 15px; }
+.nav-enlace      { color: #ffffff; margin: 0 12px; font-size: 0.95rem; }
+.btn-principal   { background-color: #e0b84a; color: #1a1a2e; padding: 12px 30px; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; }
+.btn-secundario  { background-color: transparent; color: #1a1a2e; padding: 12px 30px; border: 2px solid #1a1a2e; border-radius: 4px; cursor: pointer; }
+.campo-obligatorio { color: #cc0000; margin-left: 3px; }
+
+/* ── 4. SELECTOR DE ID (#nombre-id) ─────────────────────────
+   Selecciona el elemento único con ese id en la página.
+*/
+#inicio           { padding: 60px 40px; text-align: center; }
+#introduccion     { background-color: #eef4ff; }
+#dataset          { background-color: #fff8e1; }
+#metodologia      { background-color: #f0fff4; }
+#resultados       { background-color: #fff0f0; }
+#conclusiones     { background-color: #f5f0ff; }
+#formulario-contacto { background-color: #ffffff; max-width: 650px; margin: 0 auto; }
+
+/* ── 5. SELECTOR DESCENDENTE (padre hijo) ───────────────────
+   Selecciona elementos que están dentro de otro elemento.
+*/
+nav a        { color: #ffffff; margin: 0 12px; }
+header h1    { font-size: 2.2rem; color: #e0b84a; }
+header p     { color: #cccccc; font-size: 0.95rem; }
+footer p     { margin: 5px 0; }
+.tarjeta h3  { border-bottom: 1px solid #dddddd; padding-bottom: 8px; }
+form label   { font-size: 0.95rem; }
+
+/* ── 6. SELECTOR DE HIJO DIRECTO (padre > hijo) ─────────────
+   Selecciona solo los hijos inmediatos de un elemento.
+*/
+section > h2   { margin-top: 0; }
+form > button  { align-self: flex-start; margin-top: 5px; }
+ul > li        { list-style-type: disc; }
+
+/* ── 7. SELECTOR DE AGRUPACIÓN (sel1, sel2, sel3) ───────────
+   Aplica los mismos estilos a varios selectores a la vez.
+*/
+h1, h2, h3          { font-weight: bold; line-height: 1.3; }
+input, select, textarea { background-color: #fafafa; transition: border-color 0.2s; width: 100%; padding: 10px; border: 1px solid #cccccc; border-radius: 4px; font-size: 1rem; }
+th, td              { vertical-align: middle; }
+header, footer      { width: 100%; }
+
+/* ── 8. PSEUDO-CLASES (:hover, :focus, :nth-child) ──────────
+   Aplican estilos según el estado o posición del elemento.
+*/
+a:hover              { text-decoration: underline; color: #f5d07a; }
+nav a:hover          { color: #e0b84a; }
+button:hover         { background-color: #c9a53a; }
+.tarjeta:hover       { box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+
+input:focus,
+select:focus,
+textarea:focus       { border-color: #e0b84a; outline: none; background-color: #fffdf0; }
+
+tr:nth-child(even)   { background-color: #f9f9f9; }
+tr:nth-child(odd)    { background-color: #ffffff; }
+section:first-child  { margin-top: 0; }
+section:last-child   { margin-bottom: 0; }
+
+/* ── 9. PSEUDO-ELEMENTOS (::placeholder, ::before, ::after) ─
+   Estilizan partes específicas de un elemento.
+*/
+input::placeholder,
+textarea::placeholder { color: #aaaaaa; font-style: italic; }
+
+h2::before            { content: "▸ "; color: #e0b84a; }
+
+/* ── 10. SELECTOR DE ATRIBUTO ([atributo="valor"]) ──────────
+   Selecciona elementos según el valor de un atributo HTML.
+*/
+input[type="text"]     { border-left: 3px solid #1a1a2e; }
+input[type="email"]    { border-left: 3px solid #e0b84a; }
+input[type="number"]   { border-left: 3px solid #4a90d9; }
+input[type="date"]     { border-left: 3px solid #27ae60; }
+input[type="tel"]      { border-left: 3px solid #8e44ad; }
+input[type="password"] { border-left: 3px solid #cc0000; }
+input[type="checkbox"] { width: auto; margin-right: 8px; accent-color: #e0b84a; cursor: pointer; }
+a[target="_blank"]     { font-style: italic; }
+
+/* ── 11. MEDIA QUERY (@media) ───────────────────────────────
+   Aplica estilos de forma condicional según el tamaño de pantalla.
+*/
+@media (max-width: 768px) {
+  header    { padding: 20px; }
+  header h1 { font-size: 1.5rem; }
+  nav a     { display: block; margin: 6px 0; }
+  main      { padding: 0 12px; }
+  section   { padding: 20px; }
+}
+
+
+/* ============================================================
+   MODELO DE CAJA (CSS Box Model) — Actividad 10
+   Olivares Contreras Alejandro | ISC ITSX | 2026
+   ============================================================
+
+   El modelo de caja define cómo se calcula el espacio de cada
+   elemento en la página. Cada elemento tiene 4 capas:
+
+   [ MARGIN ]
+     [ BORDER ]
+       [ PADDING ]
+         [ CONTENT ]
+
+   margin:  espacio exterior entre elementos
+   border:  borde visible alrededor del elemento
+   padding: espacio interior entre el borde y el contenido
+   content: el área donde se muestra el texto o imagen
+*/
+
+/* ── CONTENEDOR PRINCIPAL ───────────────────────────────────
+   width:     define el ancho del área de contenido
+   max-width: limita el ancho máximo del contenedor
+   margin: 0 auto: centra el elemento horizontalmente
+   padding: agrega espacio interior para que el contenido
+            no quede pegado a los bordes del contenedor
+*/
+.contenedor {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box; /* incluye padding y border en el width total */
+}
+
+/* ── TARJETA — aplica los 4 componentes del modelo de caja ──
+   content:  el texto e imágenes dentro de la tarjeta
+   padding:  20px de espacio interior en todos los lados
+   border:   línea visible de 1px alrededor de la tarjeta
+   margin:   20px de separación con otras tarjetas
+   width:    280px de ancho fijo para el contenido
+*/
+.tarjeta-box {
+  /* CONTENT: el tamaño del área de contenido */
+  width: 280px;
+  height: auto;
+
+  /* PADDING: espacio entre el contenido y el borde */
+  padding: 20px;
+
+  /* BORDER: borde visible alrededor del elemento */
+  border: 2px solid #1a1a2e;
+  border-radius: 8px;
+
+  /* MARGIN: espacio exterior que separa esta tarjeta de otras */
+  margin: 20px;
+
+  /* box-sizing: border-box hace que padding y border
+     se incluyan dentro del width declarado */
+  box-sizing: border-box;
+
+  background-color: #ffffff;
+}
+
+/* ── TARJETA CON SOMBRA ─────────────────────────────────────
+   box-shadow: agrega sombra exterior simulando profundidad.
+   Es una extensión visual del modelo de caja.
+*/
+.tarjeta-sombra {
+  padding: 24px;           /* espacio interior generoso */
+  margin: 16px 0;          /* separación vertical entre tarjetas */
+  border: 1px solid #dddddd;
+  border-left: 5px solid #e0b84a; /* borde izquierdo destacado */
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  background-color: #ffffff;
+  box-sizing: border-box;
+}
+
+/* ── SECCIÓN DESTACADA ──────────────────────────────────────
+   Demuestra cómo padding y margin afectan el espacio visual.
+   padding: 30px arriba/abajo, 40px izquierda/derecha
+   margin:  40px arriba/abajo para separar de otras secciones
+*/
+.seccion-destacada {
+  padding: 30px 40px;      /* relleno interior */
+  margin: 40px 0;          /* separación exterior */
+  border: 2px solid #e0b84a;
+  border-radius: 10px;
+  background-color: #fff8e1;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/* ── CUADRÍCULA DE TARJETAS ─────────────────────────────────
+   Contenedor que organiza las tarjetas en filas.
+   gap: espacio entre tarjetas (equivale a margin combinado)
+*/
+.grid-tarjetas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;               /* espacio entre elementos del grid */
+  padding: 20px 0;         /* espacio interior del contenedor */
+  margin: 20px 0;          /* espacio exterior del contenedor */
+}
+
+/* ── IMAGEN CON MODELO DE CAJA ──────────────────────────────
+   Las imágenes también respetan el modelo de caja.
+   display: block elimina el espacio inferior por defecto.
+*/
+.imagen-proyecto {
+  display: block;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  padding: 4px;            /* pequeño padding alrededor de la imagen */
+  border: 2px solid #1a1a2e;
+  margin: 20px auto;       /* centrado con margin automático */
+  box-sizing: border-box;
+}
+
+/* ── ENCABEZADO DE SECCIÓN ──────────────────────────────────
+   Demuestra el uso de padding solo en lados específicos.
+   padding-bottom: espacio solo debajo del texto
+   margin-bottom:  separación solo hacia abajo
+*/
+.encabezado-seccion {
+  padding-top: 0;
+  padding-bottom: 12px;    /* espacio entre texto y línea inferior */
+  padding-left: 0;
+  padding-right: 0;
+  margin-bottom: 20px;     /* separación hacia el siguiente elemento */
+  border-bottom: 2px solid #e0b84a;
+}
+
+/* ── BOTÓN CON MODELO DE CAJA ───────────────────────────────
+   Los botones usan padding para definir su tamaño visual.
+   El padding interno es lo que da "cuerpo" al botón.
+*/
+.boton-caja {
+  padding: 12px 28px;      /* 12px arriba/abajo, 28px izquierda/derecha */
+  margin: 10px 5px;        /* separación entre botones */
+  border: 2px solid #1a1a2e;
+  border-radius: 4px;
+  background-color: #e0b84a;
+  color: #1a1a2e;
+  font-weight: bold;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+/* ── RESPONSIVE: ajuste del modelo de caja en móvil ─────────
+   En pantallas pequeñas reducimos padding y margin
+   para aprovechar mejor el espacio disponible.
+*/
+@media (max-width: 768px) {
+  .tarjeta-box {
+    width: 100%;           /* ocupa todo el ancho disponible */
+    margin: 10px 0;        /* menos margen lateral */
+    padding: 14px;         /* menos padding interior */
+  }
+
+  .seccion-destacada {
+    padding: 18px 20px;
+    margin: 20px 0;
+  }
+
+  .grid-tarjetas {
+    gap: 12px;
+  }
+}
